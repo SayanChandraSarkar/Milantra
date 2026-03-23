@@ -1,0 +1,15 @@
+{
+  "name": "milantra",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @milantra/api & npm run dev --workspace @milantra/web",
+    "build": "npm run build --workspace @milantra/api && npm run build --workspace @milantra/web",
+    "test": "npm run test --workspace @milantra/api && npm run test --workspace @milantra/web",
+    "lint": "npm run lint --workspace @milantra/api && npm run lint --workspace @milantra/web"
+  }
+}
