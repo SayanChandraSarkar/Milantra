@@ -11,11 +11,15 @@ export function MatchGrid() {
   }, []);
 
   if (error) {
-    return <div className="panel" style={{ padding: '1rem' }}>{error}</div>;
+    return <div className="panel state-panel">Unable to load profiles: {error}</div>;
+  }
+
+  if (!profiles.length) {
+    return <div className="panel state-panel">Loading curated profiles...</div>;
   }
 
   return (
-    <section className="grid matches-grid">
+    <section className="grid matches-grid" aria-label="Available matches">
       {profiles.map((profile) => <MatchCard key={profile.id} profile={profile} />)}
     </section>
   );
